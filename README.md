@@ -1,4 +1,4 @@
-# The thesis template in latex-muc
+# The thesis template in LaTex-muc
 
 Given the advantages of LaTeX in typesetting and writing, the Word template for undergraduate graduation design has been converted into a LaTeX template. You can directly fill in your content in thesis.tex.
 
