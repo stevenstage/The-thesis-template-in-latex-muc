@@ -1,1 +1,1 @@
-# The-thesis-template-in-latex-muc
+# The thesis template in latex-muc
