@@ -1,6 +1,6 @@
 # The thesis template in LaTeX-muc
 
-Given the advantages of LaTeX in typesetting and writing, the Word template for undergraduate graduation design has been converted into a LaTeX template. You can directly fill in your content in thesis.tex.
+Given the advantages of LaTeX in typesetting and writing, the **Word** template for undergraduate graduation design has been converted into a LaTeX template. You can directly fill in your content in *thesis.tex*.
 
 ## How to use LaTeX
 
