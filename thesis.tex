@@ -3,10 +3,10 @@
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{geometry}
-\usepackage{fancyhdr}  % 新增页眉页脚宏包
+\usepackage{fancyhdr}
 \usepackage{booktabs} 
 \geometry{a4paper,left=3cm,right=2.5cm,top=3cm,bottom=2.5cm}
-% 在导言区添加字体设置
+
 \usepackage{fontspec}
 \setmainfont{Times New Roman}[
     BoldFont=Times New Roman Bold,
@@ -36,15 +36,11 @@
 \renewcommand{\cftfigaftersnum}{}  % 清除冒号分隔符
 \setlength{\cftfignumwidth}{3em}   % 增加编号区域宽度
 
-% 表格目录保持原样 ↓↓↓
 \renewcommand{\cfttabpresnum}{表}
 \renewcommand{\cfttabaftersnum}{}
 \setlength{\cfttabnumwidth}{3em}
 
 \usepackage[super]{cite}
-\renewcommand{\citeleft}{[}
-\renewcommand{\citeright}{]}
-\renewcommand{\citepunct}{,}
 \renewcommand{\citeform}{\fontfamily{ptm}\selectfont\zihao{5}}
 
 
@@ -58,12 +54,17 @@
 \setcounter{tocdepth}{3} % 显示三级目录
 \renewcommand{\contentsname}{\hfill 目录页\hfill} 
 
-% 在导言区添加以下代码（放在geometry宏包之后）
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[R]{\songti \zihao{-5} 中央民族大学本科生毕业论文(设计)}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[R]{\songti \zihao{-5} 中央民族大学本科生毕业论文(设计)}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
 
 \begin{document}
 % 新建封面页
@@ -103,14 +104,15 @@
 \newpage
 % 封面页后设置罗马页码
 \clearpage
-\pagenumbering{Roman} % 从II开始
-\setcounter{page}{2} % 封面页为I，摘要从II开始
+\pagenumbering{Roman}
+\setcounter{page}{2}
 
-\vspace*{0pt} % 消除顶部间距
+\enlargethispage{\baselineskip}
+\vspace*{-\topskip}
 \begin{center}
-    \heiti \zihao{3} 摘\hspace{1em}要 % 黑体三号
+    \heiti \zihao{3} 摘\hspace{1em}要
 \end{center}
-\vspace{0.1cm} % 标题与正文间距
+\vspace{0.1cm}
 
 \zihao{-4} \songti 
 \noindent\hspace{2em}论文的摘要是对论文研究内容和成果的高度概括。摘要应对论文所研究的问题及其研究目的进行描述，对研究方法和过程进行简单介绍，对研究成果和所得结论进行概括。
@@ -146,9 +148,11 @@
 \fontfamily{\familydefault}\selectfont 
 
 \newpage
-\setcounter{page}{4} % 设置目录页为IV
-\addcontentsline{toc}{section}{目录页} % 将目录页加入目录
-\tableofcontents % 生成目录
+\setcounter{page}{4}
+\enlargethispage{\baselineskip}
+\vspace*{-\topskip}
+\addcontentsline{toc}{section}{目录页}
+\tableofcontents
 \thispagestyle{fancy}
 
 \newpage
