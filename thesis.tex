@@ -1,12 +1,22 @@
 \documentclass[12pt,a4paper]{ctexart}
-\usepackage{amsmath,amsthm,amssymb,appendix,bm,graphicx,hyperref,mathrsfs,abstract,tabularx}
+\usepackage{amsmath,amsthm,amssymb,appendix,bm,graphicx,mathrsfs,abstract,tabularx,xcolor}
+\usepackage[colorlinks=true, 
+           citecolor=blue,    
+           linkcolor=black, 
+           pdfborder={0 0 0}]{hyperref}
+\usepackage[super,sort&compress]{natbib}
+\renewcommand{\bibnumfmt}[1]{[#1]}
+\makeatletter
+\let\NAT@citex\NAT@citexorig
+\makeatother
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{geometry}
-\usepackage{fancyhdr}
-\usepackage{booktabs} 
+\usepackage{multirow}
+\usepackage{fancyhdr}  % 新增页眉页脚宏包
+\usepackage{booktabs}
 \geometry{a4paper,left=3cm,right=2.5cm,top=3cm,bottom=2.5cm}
-
+% 在导言区添加字体设置
 \usepackage{fontspec}
 \setmainfont{Times New Roman}[
     BoldFont=Times New Roman Bold,
@@ -36,13 +46,10 @@
 \renewcommand{\cftfigaftersnum}{}  % 清除冒号分隔符
 \setlength{\cftfignumwidth}{3em}   % 增加编号区域宽度
 
+% 表格目录保持原样 ↓↓↓
 \renewcommand{\cfttabpresnum}{表}
 \renewcommand{\cfttabaftersnum}{}
 \setlength{\cfttabnumwidth}{3em}
-
-\usepackage[super]{cite}
-\renewcommand{\citeform}{\fontfamily{ptm}\selectfont\zihao{5}}
-
 
 %%定理环境
 \newtheorem{theorem}{定理}[section]
