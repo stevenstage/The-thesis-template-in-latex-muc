@@ -13,10 +13,9 @@
 \usepackage{caption}
 \usepackage{geometry}
 \usepackage{multirow}
-\usepackage{fancyhdr}  % 新增页眉页脚宏包
+\usepackage{fancyhdr}
 \usepackage{booktabs}
 \geometry{a4paper,left=3cm,right=2.5cm,top=3cm,bottom=2.5cm}
-% 在导言区添加字体设置
 \usepackage{fontspec}
 \setmainfont{Times New Roman}[
     BoldFont=Times New Roman Bold,
@@ -27,9 +26,9 @@
 \renewcommand{\cfttoctitlefont}{\hfill\heiti\zihao{3}\bfseries}
 \renewcommand{\cftaftertoctitle}{\hfill\mbox{}}
 \renewcommand{\cftdot}{.}
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}     % 一级标题
-\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}  % 二级标题
-\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}} % 三级标题
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
 
 \renewcommand{\listfigurename}{图片目录}
 \renewcommand{\listtablename}{表格目录}
@@ -39,19 +38,20 @@
 \renewcommand{\cftlottitlefont}{\hfill\heiti\zihao{3}\bfseries}
 \renewcommand{\cftafterlottitle}{\hfill\mbox{}}
 
-\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}} % 图片目录引导点
-\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}} % 表格目录引导点
+\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
 
-\renewcommand{\cftfigpresnum}{图} % 添加"图"前缀
-\renewcommand{\cftfigaftersnum}{}  % 清除冒号分隔符
-\setlength{\cftfignumwidth}{3em}   % 增加编号区域宽度
+\renewcommand{\cftfigpresnum}{图}
+\renewcommand{\cftfigaftersnum}{}
+\setlength{\cftfignumwidth}{3em}
 
-% 表格目录保持原样 ↓↓↓
 \renewcommand{\cfttabpresnum}{表}
 \renewcommand{\cfttabaftersnum}{}
 \setlength{\cfttabnumwidth}{3em}
 
-%%定理环境
+\captionsetup[figure]{labelsep=space}
+\captionsetup[table]{labelsep=space} 
+
 \newtheorem{theorem}{定理}[section]
 \newtheorem{definition}[theorem]{定义}
 \newtheorem{lemma}[theorem]{引理}		
@@ -74,8 +74,7 @@
 }
 
 \begin{document}
-% 新建封面页
-\thispagestyle{empty} % 封面页无页眉页脚
+\thispagestyle{empty}
 \vspace*{10pt}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{muc.png} \\
@@ -83,33 +82,29 @@
 {\heiti \zihao{-0} 本科毕业论文（设计）} \\
 \vspace{1cm}
 
-% 修改为居中对齐的表格布局
 {
     \renewcommand{\arraystretch}{2.0}
-    % 题目区域使用两列布局
     \begin{tabular}{@{}ll@{}}
         \heiti \zihao{-1}题\hspace{0.5em}目： & 
-        \heiti \zihao{-1}\underline{\makebox[16em]{[主标题]}} \\[0.3cm]
-        & \heiti \zihao{-1}\underline{\makebox[16em]{\hspace{1em}——[副标题]}} \\[1cm]
+        \heiti \zihao{-1}\underline{\makebox[16em]{}} \\[0.3cm]
+        & \heiti \zihao{2}\underline{\makebox[16em]{\hspace{1em}——}} \\[1cm]
     \end{tabular}
 
-    % 个人信息区域使用居中对齐
-    \begin{tabular}{c}
-        \fangsong \zihao{-3} 姓\hspace{0.5em}名：\underline{\makebox[12em]{}} \\[0.5cm]
-        \fangsong \zihao{-3} 学\hspace{0.5em}号：\underline{\makebox[12em]{}} \\[0.5cm]
-        \fangsong \zihao{-3} 年\hspace{0.5em}级：\underline{\makebox[12em]{}} \\[0.5cm]
-        \fangsong \zihao{-3} 学\hspace{0.5em}院：\underline{\makebox[12em]{}} \\[0.5cm]
-        \fangsong \zihao{-3} 专\hspace{0.5em}业：\underline{\makebox[12em]{}} \\[0.5cm]
-        \fangsong \zihao{-3} 指导教师：\underline{\makebox[12em]{}} \\[1cm]
+    \begin{tabular}{c}  
+        \fangsong \zihao{-3} 姓\hspace{0.8em}名：\underline{\makebox[12em]{your name}} \\[0.5cm]
+        \fangsong \zihao{-3} 学\hspace{0.8em}号：\underline{\makebox[12em]{}} \\[0.5cm]
+        \fangsong \zihao{-3} 年\hspace{0.8em}级：\underline{\makebox[12em]{21}} \\[0.5cm]
+        \fangsong \zihao{-3} 学\hspace{0.8em}院：\underline{\makebox[12em]{information}} \\[0.5cm]
+        \fangsong \zihao{-3} 专\hspace{0.8em}业：\underline{\makebox[12em]{communication}} \\[0.5cm]
+        \fangsong \zihao{-3} 指导教师：\underline{\makebox[12em]{your teacher}} \\[0.5cm]
     \end{tabular}
 }
 
-{\fangsong \zihao{-3} 年\hspace{1em}月\hspace{1em}日} % 日期居中
+{\fangsong \zihao{-3}2025年4月7日}
 \end{center}
 
-% 修改目录页设置
+
 \newpage
-% 封面页后设置罗马页码
 \clearpage
 \pagenumbering{Roman}
 \setcounter{page}{2}
@@ -131,16 +126,15 @@
 \vspace{1em}
 \noindent{\heiti 关键词：}\songti 关键词1；关键词2；关键词3；关键词4；关键词5
 
-% 修改英文摘要分页设置
 \newpage
-\enlargethispage{\baselineskip} % 扩展页面可用高度
-\vspace*{-\topskip} % 消除默认顶部间距
+\enlargethispage{\baselineskip}
+\vspace*{-\topskip}
 \begin{center}
     \heiti \zihao{3} Abstract
 \end{center}
 \vspace{0.1cm}
 
-\fontfamily{ptm}\selectfont % 切换至Times New Roman
+\fontfamily{ptm}\selectfont
 \zihao{-4} 
 \noindent\hspace{2em}An abstract of a dissertation is a summary and extraction of research work and contributions. Included in an abstract should be description of research topic and research objective, brief introduction to methodology and research process, and summary of conclusion and contributions of the research.
 
@@ -151,7 +145,6 @@
 \vspace{1em}
 \noindent{\sffamily\fontseries{b}\selectfont Key words:}~keyword 1;~keyword 2;~keyword 3;~keyword 4;~keyword 5
 
-% 恢复中文字体（自动恢复）
 \fontfamily{\familydefault}\selectfont 
 
 \newpage
@@ -178,7 +171,6 @@
     \item[$\delta$] 示例说明文字（请替换为实际含义）
 \end{description}
 
-% 正文部分修改为实际章节结构
 \newpage
 \setcounter{page}{1}
 \pagenumbering{arabic}
@@ -355,7 +347,6 @@ f(x) = a_0 + \sum_{n=1}^{\infty} \left( a_n \cos \frac{n \pi x}{L} + b_n \sin \f
 
 \end{appendices}
 
-% 添加致谢部分
 \newpage
 \section*{致谢}
 \addcontentsline{toc}{section}{致谢}
