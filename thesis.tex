@@ -1,11 +1,10 @@
 \documentclass[12pt,a4paper]{ctexart}
 \usepackage{amsmath,amsthm,amssymb,appendix,bm,graphicx,mathrsfs,abstract,tabularx,xcolor}
 \usepackage[colorlinks=true, 
-           citecolor=blue,    
+           citecolor=black,    
            linkcolor=black, 
            pdfborder={0 0 0}]{hyperref}
-\usepackage[super,sort&compress]{natbib}
-\renewcommand{\bibnumfmt}[1]{[#1]}
+\usepackage[super,sort&compress,square]{natbib}
 \makeatletter
 \let\NAT@citex\NAT@citexorig
 \makeatother
@@ -16,6 +15,9 @@
 \usepackage{fancyhdr}
 \usepackage{booktabs}
 \geometry{a4paper,left=3cm,right=2.5cm,top=3cm,bottom=2.5cm}
+\usepackage{setspace}
+\linespread{1.5}\selectfont 
+
 \usepackage{fontspec}
 \setmainfont{Times New Roman}[
     BoldFont=Times New Roman Bold,
@@ -26,9 +28,9 @@
 \renewcommand{\cfttoctitlefont}{\hfill\heiti\zihao{3}\bfseries}
 \renewcommand{\cftaftertoctitle}{\hfill\mbox{}}
 \renewcommand{\cftdot}{.}
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
-\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}     % 一级标题
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}  % 二级标题
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}} % 三级标题
 
 \renewcommand{\listfigurename}{图片目录}
 \renewcommand{\listtablename}{表格目录}
@@ -38,8 +40,8 @@
 \renewcommand{\cftlottitlefont}{\hfill\heiti\zihao{3}\bfseries}
 \renewcommand{\cftafterlottitle}{\hfill\mbox{}}
 
-\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
-\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}} % 图片目录引导点
+\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}} % 表格目录引导点
 
 \renewcommand{\cftfigpresnum}{图}
 \renewcommand{\cftfigaftersnum}{}
@@ -52,6 +54,8 @@
 \captionsetup[figure]{labelsep=space}
 \captionsetup[table]{labelsep=space} 
 
+
+%%定理环境
 \newtheorem{theorem}{定理}[section]
 \newtheorem{definition}[theorem]{定义}
 \newtheorem{lemma}[theorem]{引理}		
@@ -151,7 +155,6 @@
 \setcounter{page}{4}
 \enlargethispage{\baselineskip}
 \vspace*{-\topskip}
-\addcontentsline{toc}{section}{目录页}
 \tableofcontents
 \thispagestyle{fancy}
 
@@ -303,6 +306,7 @@ f(x) = a_0 + \sum_{n=1}^{\infty} \left( a_n \cos \frac{n \pi x}{L} + b_n \sin \f
 是的，可以通过zotero进行统一的文献管理，可以上网搜索具体操作，这里不展开。如果觉得配置过程麻烦，也可以参考上面关于文献格式的内容，只要能按照文献格式书写即可。
 
 \newpage
+\addcontentsline{toc}{section}{参考文献}
 \begin{thebibliography}{99}
     \bibitem{ref1}孟悦. 两千年:女性作为历史的盲点. 上海文论, 1989(2): 18
     \bibitem{ref2}朱传礼. 高等学校毕业设计(论文)指导手册. 高等教育出版社，2001：25
